@@ -1,0 +1,19 @@
+{
+	"files.associations": {
+		"*.vue": "vue",
+		".stylelintrc": "json"
+	},
+	"window.zoomLevel": 1,
+	"vsicons.projectDetection.autoReload": true,
+	"eslint.options": {
+        "extensions": [".js", ".vue"]
+    },
+    "vsicons.dontShowNewVersionMessage": true,
+	"typescript.check.npmIsInstalled": false,
+	"emmet.showExpandedAbbreviation": "always",
+	"emmet.includeLanguages": {
+		"vue-html": "html"
+	},
+	"scss.validate": false,
+	"workbench.iconTheme": "vscode-icons"
+}

@@ -1,0 +1,85 @@
+# Easier navigation: .., ..., ~ and -
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+alias dk='cd ~/Desktop'
+alias cdc='cd /var/www/convenia'
+alias cdz='cd ~/zdev'
+
+# be nice
+alias please=sudo
+alias hosts='sudo $EDITOR /etc/hosts'
+
+# List all files colorized in long format
+alias l="ls -lh"
+
+# List all files colorized in long format, including dot files
+alias la="ls -lah"
+
+# List only directories
+alias lsd='ls -l | grep "^d"'
+
+# List order by time desc
+alias lst='ls -lat'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
+# Enhanced WHOIS lookups
+alias whois="whois -h whois-servers.net"
+
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache"
+
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# Trim new lines and copy to clipboard
+alias trimcopy="tr -d '\n' | pbcopy"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
+# GIT STUFF
+
+# Undo a `git push`
+alias undopush="git push -f origin HEAD^:master"
+alias gs="git status"
+alias ga="git add ."
+alias gc="git commit -m "
+alias gp="git push"
+
+# NPM AUTHORING STUFF
+alias patch="npm version patch && npm publish && npm link"
+alias minor="npm version minor && npm publish && npm link"
+alias major="npm version major && npm publish && npm link"
+
+# YARN STUFF
+alias y="yarn"
+alias yi="yarn && yarn dev"
+alias yd="yarn dev"
+alias yb="yarn build"
+alias yt="yarn test"
+
+# ping only once and die
+alias ping="ping -o"
+
+# File size
+alias fs="stat -f \"%z bytes\""
+
+# Empty the Trash on all mounted volumes and the main HDD
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# Show/Hide Hidden Files i Finder
+alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'

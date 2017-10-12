@@ -1,0 +1,81 @@
+[alias]
+	br = branch
+	c = commit -am
+	co = checkout
+	cp = cherry-pick
+	df = diff --color --color-words --abbrev
+	dl = pull
+	f = "!git ls-files | grep -i"
+	ignored = ls-files -o -i --exclude-standard
+	la = "!git config -l | grep alias | cut -c 7-"
+	ll = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --numstat
+	ls = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	p = push
+	s = status -s
+[color]
+	ui = always
+[core]
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	autocrlf = input
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+[url "git://github.com/"]
+	insteadOf = "github:"
+[url "git@gist.github.com:"]
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+[url "git://gist.github.com/"]
+	insteadOf = "gist:"
+
+[url "git@github.com:abensur/"]
+  insteadOf = "git://github.com/abensur/"
+[user]
+	name = Rafael Abensur
+	email = rafael@abensur.me
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
+[diff]
+	tool = kaleidoscope
+[difftool]
+	prompt = false
+[difftool "kaleidoscope"]
+	cmd = ksdiff \"$LOCAL\" \"$REMOTE\"
+[merge]
+	log = true
+	tool = kaleidoscope
+[mergetool]
+	keepBackup = false
+[mergetool "kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
