@@ -14,7 +14,6 @@ brew "ffmpeg"
 brew "flac"
 brew "node"
 brew "lynx"
-brew "jpeg", args: ["universal"]
 brew "mas"
 brew "openssl"
 brew "postgresql"
