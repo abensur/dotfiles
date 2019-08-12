@@ -15,7 +15,7 @@
 [color]
 	ui = always
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/abensur/.gitignore_global
 	attributesfile = ~/.gitattributes
 	autocrlf = input
 [color "branch"]
@@ -43,12 +43,9 @@
 	pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
-
-[url "git@github.com:abensur/"]
-  insteadOf = "git://github.com/abensur/"
 [user]
-	name = Rafael Abensur
-	email = rafael@abensur.me
+	name = "Rafael Abensur"
+	email = "rafael@abensur.me"
 [filter "media"]
 	required = true
 	clean = git media clean %f
@@ -57,20 +54,8 @@
 	helper = osxkeychain
 [push]
 	default = simple
-[diff]
-	tool = kaleidoscope
-[difftool]
-	prompt = false
-[difftool "kaleidoscope"]
-	cmd = ksdiff \"$LOCAL\" \"$REMOTE\"
 [merge]
 	log = true
-	tool = kaleidoscope
-[mergetool]
-	keepBackup = false
-[mergetool "kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f

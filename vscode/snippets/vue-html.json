@@ -1,0 +1,17 @@
+{
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	},
+	"Eslint disble next line": {
+		"prefix": "dnl",
+		"body": [
+			"//eslint-disable-next-line"
+		],
+		"description": "Disable eslint for nextline"
+	}
+}

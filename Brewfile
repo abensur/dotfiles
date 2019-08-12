@@ -3,30 +3,34 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 
 # packages
+
+brew "awscli"
 brew "bash"
 brew "coreutils"
 brew "curl"
+brew "docker"
+brew "docker-compose"
+brew "ffmpeg"
+brew "flac"
+brew "node"
+brew "lynx"
 brew "jpeg", args: ["universal"]
 brew "mas"
-brew "nvm"
+brew "openssl"
+brew "postgresql"
+brew "python"
+brew "python@2"
+brew "s3deploy"
+brew "unrar"
+brew "watch"
+brew "watchman"
 brew "wget"
-brew "yarn"
 
-# password manager
-cask "keepassx"
-
-# browsers
 cask "google-chrome"
-
-# editor
 cask "visual-studio-code"
-
-# docs
 cask "macdown"
-
-# utilities
 cask "appcleaner"
 cask "alfred"
 cask "transmission"
 cask "vlc"
-cask "sequel-pro"
+cask "insomnia"

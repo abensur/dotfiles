@@ -7,12 +7,13 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 alias dk='cd ~/Desktop'
-alias cdc='cd /var/www/convenia'
 alias cdz='cd ~/zdev'
+alias a55='cd ~/zdev/a55'
+alias auth='cd ~/zdev/a55/auth-web && yarn serve'
 
 # be nice
 alias please=sudo
-alias hosts='sudo $EDITOR /etc/hosts'
+alias hosts='sudo code /etc/hosts'
 
 # List all files colorized in long format
 alias l="ls -lh"
@@ -60,13 +61,6 @@ alias patch="npm version patch && npm publish && npm link"
 alias minor="npm version minor && npm publish && npm link"
 alias major="npm version major && npm publish && npm link"
 
-# YARN STUFF
-alias y="yarn"
-alias yi="yarn && yarn dev"
-alias yd="yarn dev"
-alias yb="yarn build"
-alias yt="yarn test"
-
 # ping only once and die
 alias ping="ping -o"
 
@@ -83,3 +77,13 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # Show/Hide Hidden Files i Finder
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+# Show IP's QRCode
+local_ip=$(ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\  -f2)
+alias ipqr="qrcode $local_ip"
+
+# Python migrations
+alias smigrate="python manage.py makemigrations"
+alias migrate="python manage.py migrate"
+alias mig="smigrate && migrate"
+alias nocors='open -a "Google Chrome" --args --disable-web-security'

@@ -15,8 +15,6 @@ brew bundle
 
 source utils/utils.sh
 
-source osx/index.sh
-
 source vscode/index.sh
 
 source dotfiles/index.sh

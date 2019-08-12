@@ -53,3 +53,8 @@ function extract() {
 		echo "'$1' is not a valid file"
 	fi
 }
+
+function workon() {
+	dir=${PWD##*/}
+	eval "source ../env_${dir}/bin/activate"
+}
